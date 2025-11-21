@@ -1,0 +1,250 @@
+:root{
+    --bg-color-primary:#f78a76;  /*fond corail */
+    --bg-color-secondary:#25a2c3; /*couleur secondaire bleu */
+    --bg-color-dark:#fff; 
+    --couleur-lien:#f78a76;  
+    --font-logo:'Pacifico';
+    --font-textes:'Open Sans';
+    --font-titres-boutons:'Montserrat';
+    
+}
+/* pacifico-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/pacifico-v23-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/open-sans-v44-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/montserrat-v31-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* reset des marges dans html */
+
+*{
+    margin: 0;
+    padding: 0; 
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+.bouton{
+    background-color: var(--bg-color-primary);
+    color: var(--bg-color-dark);
+    padding: 8px 48px;
+    font-size:0.8rem;
+    border-radius: 3px;
+}
+.bouton:hover{
+    transform: scale(1.05);
+}
+
+body{
+    font-family: var(--font-textes);
+    font-size: 18px;
+}
+
+/* ============== header =========*/
+
+#Bandeau{
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+}
+#logo a{
+    font-family: var(--font-logo);
+    color: var(--couleur-lien);
+    font-size: 2.5rem;
+}
+#menuPrincipal ul{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+#menuPrincipal ul li{
+    margin:32px 16px 0;
+}
+#menuPrincipal ul li a{
+    color: black;
+}
+#menuPrincipal ul li a:hover,
+#menuPrincipal ul li a.choix{
+    color:var(--couleur-lien);
+}
+
+/*================= Bienvenue ==============*/
+
+#bienvenue{
+    background-image:url("images/paysage.jpg");
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#bienvenue h1{
+    font-family: var(--font-titres-boutons);
+    color: var(--couleur-lien);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.487);
+}
+#bienvenue p{
+    width: 60%;
+    color:var(--bg-color-dark);
+    padding: 8px 24px;
+    margin:24px;
+    background-color: rgba(0,0,0,0.487)
+}
+
+/*====================== Categories ===============*/
+
+#categories{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 48px;
+}
+#categories .colonne{
+    width: 30%;
+}
+#categories .colonne h3{
+    color: var(--bg-color-secondary);
+    font-family: var(--font-titres-boutons);
+    margin-bottom: 8px;
+}
+#categories .colonne p{
+    color: darkgrey;
+    margin-bottom: 24px;
+    font-size: 0.8rem;
+}
+#categories .colonne:first-child{
+    text-align: right;
+}
+#categories .colonne img{
+    border-radius: 50%;
+    width: 100%;
+}
+#categories .colonne img:hover{
+    webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+
+
+/*===================== CTA =============*/
+
+#CTA{
+    display: flex;
+    background-color: var(--bg-color-primary);
+    color: var(--bg-color-dark);
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 48px 0;
+    padding: 48px;
+    align-items: center;
+}
+#CTA p{
+    text-align: center;
+    margin: 16px;
+    padding: 24px;
+    width: 60%;
+
+}
+#CTA .bouton{
+    background-color: var(--bg-color-dark);
+    color: var(--couleur-lien);
+    font-weight: bold;
+    margin: 16px;
+}
+#CTA .bouton:hover{
+    background-color: var(--bg-color-primary);
+    color: var(--bg-color-dark);
+}
+
+/*==================== Articles en avant ===========*/
+
+#Enavant{
+    display: flex;
+    justify-content: space-evenly;
+}
+#Enavant .post{
+    width: 28%;
+    border: 1px solid rgba(53, 51, 51, 0.274);
+    padding-bottom: 24px;
+}
+#Enavant .post:hover{
+    box-shadow: 5px 5px 5px #25a2c3;
+}
+
+#Enavant .post img{
+    width: 100%;
+    
+}
+#Enavant .post h3,
+#Enavant .post p{
+    padding: 16px 16px 0;
+}
+#Enavant .post h3 a{
+    color: var(--bg-color-secondary);
+}
+
+/*============== Footer ==============*/
+
+#pied{
+    background-color: var(--bg-color-secondary);
+    color: var(--bg-color-dark);
+    margin-top: 48px;
+}
+#pied #contact{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#pied #contact h3{
+    font-family: var(--font-titres-boutons);
+    font-size: 1.8rem;
+}
+#pied #contact ul{
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+#pied #contact ul i{
+    font-size: 1.2rem;
+}
+#pied #copyright{
+    text-align: center;
+    padding: 24px; 
+    border-top: 1px solid #fff 
+}
+#pied #copyright a{
+    color: var(--bg-color-dark);
+}

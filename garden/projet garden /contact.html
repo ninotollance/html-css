@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden</title>
+    <!-- feuilles de style nivo slider -->
+    <link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+     <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" />
+    <!-- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+</head>
+<body>
+    <header id="bandeau" class="container">
+        <div id="logo"><a href="index.html" >G</a></div>
+        <nav id="menuPrincipal">
+            <div id="burger">
+            <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="#">A&nbsp;PROPOS</a></li>
+                <li><a href="galerie.html">GALERIE</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="contact.html" class="on">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="contenu" class="container">
+    <h1 class="titrePage">Nous Contacter</h1>
+    <div id="contact">
+        <form action="envoyerMessage.php" method="post">
+        <p>Civilité :
+            <input type="radio" name="civilite" id="M"> <label for="M">M.</label>
+            <input type="radio" name="civilite" id="Mme"> <label for="Mme">Mme</label>
+            <input type="radio" name="civilite" id="Autre"> <label for="Autre">Autre</label>
+        </p>
+        <div class="deuxColonnes">
+        <p><label for="nom">Nom</label><br><input type="text" name="nom" id="nom"></p>
+        <p><label for="prenom">Prénom</label><br><input type="text" name="prenom" id="prenom"></p>
+        </div>
+        <div class="deuxColonnes">
+        <p><label for="email">Email</label><br><input type="email" name="email" id="email"></p>
+        <p><label for="pays">Pays</label><br>
+            <select name="pays" id="pays">
+            <option>Choisissez votre pays</option>
+            <option value="france">France</option>
+            <option value="italie">Italie</option>
+            <option value="japon">Japon</option>
+            <option value="coreeDuNord">Corée du nord</option>
+        </select></p> 
+        </div> 
+        <p>
+            Vos préférences :
+            <input type="checkbox" name="choix" id="jardin" value="jardin"> <label for="jardin">Jardin</label>
+            <input type="checkbox" name="choix" id="amenagement" value="amenagement"> <label for="amenagement">Aménagement</label>
+            <input type="checkbox" name="choix" id="irrigation" value="irrigation"> <label for="irrigation">Irrigation</label>
+        </p>
+        <p><label for="message">Message</label><br>
+            <textarea name="message" id="message" rows="5" maxlength="120"></textarea>
+        </p>
+        <div class="boutonContact">
+        <p>
+            <input type="submit" value="Envoyer">
+            <input type="reset" value="Annuler">
+        </p>
+        </div>
+
+        </form>
+    </div>
+    <section id="cadre">
+        <div class="iframe"><h3>Carte</h3>
+        <div id="map"></div>
+        </div>
+        <div class="iframe"><h3>Vidéo</h3>
+        <iframe src="https://www.youtube.com/embed/oXgWk9r0DSI?si=ANoIU0N0BxA437pG" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        
+    </section>
+    <div class="street"><h3>Carte</h3>
+          <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-2.765271663665772%2C47.65024787843869%2C-2.758190631866455%2C47.65363747944057&amp;layer=mapnik"></iframe><br/><small></small>
+        </div>
+    
+    
+    </main>
+    <footer id="pied" class="container">
+        <div class="colonne">
+            <address>
+               <span class="majuscules">Garden</span><br>
+                Za des petits Bois - 56103 Lorient 
+                cedex 7
+            </address>
+            <div class="reseaux">
+                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-square-pinterest"></i></a>
+            </div>
+        </div>
+        
+        <div class="colonne">
+            <p class="retour"><a href="#bandeau"> <img src="images-garden/flechehaut.png" alt="retour haut de page"></a></p>
+            <p>&copy;Copyright Greta 2025 - <a href="#">Mentions Légales</a></p>
+        </div>
+        
+
+    </footer>
+
+    <script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.nivo.slider.js"></script>
+    <script type="text/javascript" src="scripts/categories.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    $("#bandeau #menuPrincipal #burger i").click(function(){
+        $("#bandeau #menuPrincipal ul").slideToggle(0);
+    })
+    
+    var map = L.map('map').setView([47.651849300926116, -2.7610817548052466], 15.5);
+    var marker = L.marker([47.651849300926116, -2.7610817548052466]).addTo(map);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+    </script>
+    
+    
+</body>
+</html>
