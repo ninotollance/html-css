@@ -38,7 +38,7 @@ body{
     font-size: 18px;
 }
 .container{
-    /* longueur maximale du bloc si taile au dessus de 1200px */
+    /* longueur maximale du bloc si taille au dessus de 1200px */
     max-width: 1200px;
     /* si taille en dessous de 1200px */
     width: 100%;

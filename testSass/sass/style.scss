@@ -1,0 +1,206 @@
+@use "couleurs";
+@use "fonts";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* les variables */
+// les variables
+
+$borderRadius: 5px;
+$margeBoite:25px;
+
+@mixin fade($type,$duration: 0.4s,$easing:ease-out){
+
+ @if $type=="hide"{
+
+ visibility:hidden;
+
+ opacity:0;
+
+ transition: 
+ visibility $duration $easing,
+ opacity $duration $easing;
+
+ }
+
+
+ @else if $type=="show"{
+
+
+ visibility:visible;
+
+
+ opacity:1;
+
+
+ transition: 
+ opacity $duration $easing;
+
+}
+}
+$colorLight:#c7b8b8;
+
+$colorDark:#6b4141;
+
+@mixin theme($light-theme:true){
+
+    @if($light-theme){
+
+        color:$colorDark;
+
+        background-color:$colorLight;
+
+    }@else{
+
+        color:$colorLight;
+
+        background-color: $colorDark;
+
+    }
+}
+
+.titre{
+    font-size: 44px;
+    text-align: center;
+    font-family: fonts.$fontTitre;
+    
+}
+.titreListe{
+    @extend .titre;
+    letter-spacing: -5px;
+    color: pink;
+}
+body{
+    padding: 40px;
+    /*background-color:couleurs.$couleurFond;*/
+    color:couleurs.$couleurTexte;
+    background: couleurs.$random-couleur;
+    @include theme($light-theme:true);
+
+    span{
+
+        @include theme($light-theme:false);
+
+    }
+}
+.boite{
+    position: relative;
+    margin: auto;
+    width: 50%;
+    min-height: 100px;
+    background-color:couleurs.$fondBoite;
+    color:couleurs.$couleurBoite;
+    border:$borderRadius;
+    padding:$margeBoite;
+    text-align: center;
+}
+.dessus{
+    position: absolute;
+    background-color: aqua;
+    padding: 50px;
+    left: 0;
+    top: 0;
+    
+}
+.dessous {
+    position: absolute;
+    &:active{
+
+ @include fade("hide");
+
+ }
+}
+$random-couleur:rgb(random(255),random(255),random(255));
+
+.list{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+    .item{
+        font-size: 2rem;
+        font-family:fonts.$fontMenu;
+        color:couleurs.$couleurMenu;
+        margin: 20px;
+        background-color: couleurs.$couleurList;
+        padding: 10px 20px;
+
+        &:hover{
+            color: couleurs.$couleurHover;
+            background-color: couleurs.$couleurFondHover;
+        }
+        a{
+            color:couleurs.$couleurMenu;
+            text-decoration: none;
+            &:hover{
+                color: couleurs.$couleurHover;
+                background-color: couleurs.$couleurFondHover;
+            }
+        }
+    }
+}
+.titre3{
+    @extend .titre;
+    color: rgb(5, 253, 220);
+    letter-spacing: 5px;
+    
+}
+.boite2{
+    @extend .boite;
+    background-color: rgb(252, 4, 190);
+}
+@mixin flexMid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxP{
+    @include flexMid;
+    width: 300px;
+    height: 300px;
+    background-color: chocolate;
+}
+.boxE{
+    @include flexMid;
+    background-color: greenyellow;
+    padding: 5px;
+}
+@mixin Bouton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(139, 25, 101);
+    color: rgb(255, 255, 255);
+    padding: 16px 32px;
+    margin: 16px;
+}
+.boutonEnvoyer,
+.boutonAnnuler{
+    @include Bouton;
+}
+.boutonEnvoyer{
+    background-color: blue;
+}
+.boutonAnnuler{
+    background-color: red;
+}
+@mixin addTitle($type,$size,$font-family,$color){
+    #{$type}{
+        font-size: $size;
+        font-family: $font-family;
+        color: $color;
+    }
+}
+@include addTitle(h5,80px,serif,red);
+
+ $colorLight:#c7b8b8;
+
+$colorDark:#6b4141;
+
+
+

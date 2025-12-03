@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* les variables */
+.titre, .titre3, .titreListe {
+  font-size: 44px;
+  text-align: center;
+  font-family: "sans-serif";
+}
+
+.titreListe {
+  letter-spacing: -5px;
+  color: pink;
+}
+
+body {
+  padding: 40px;
+  /*background-color:couleurs.$couleurFond;*/
+  color: blue;
+  background: rgb(231, 121, 216);
+  color: #6b4141;
+  background-color: #c7b8b8;
+}
+body span {
+  color: #c7b8b8;
+  background-color: #6b4141;
+}
+
+.boite, .boite2 {
+  position: relative;
+  margin: auto;
+  width: 50%;
+  min-height: 100px;
+  background-color: grey;
+  color: #eee;
+  border: 5px;
+  padding: 25px;
+  text-align: center;
+}
+
+.dessus {
+  position: absolute;
+  background-color: aqua;
+  padding: 50px;
+  left: 0;
+  top: 0;
+}
+
+.dessous {
+  position: absolute;
+}
+.dessous:active {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.list .item {
+  font-size: 2rem;
+  font-family: "impact,sans-serif";
+  color: rgb(31, 30, 30);
+  margin: 20px;
+  background-color: #3f36c7;
+  padding: 10px 20px;
+}
+.list .item:hover {
+  color: white;
+  background-color: #282274;
+}
+.list .item a {
+  color: rgb(31, 30, 30);
+  text-decoration: none;
+}
+.list .item a:hover {
+  color: white;
+  background-color: #282274;
+}
+
+.titre3 {
+  color: rgb(5, 253, 220);
+  letter-spacing: 5px;
+}
+
+.boite2 {
+  background-color: rgb(252, 4, 190);
+}
+
+.boxP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: chocolate;
+}
+
+.boxE {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: greenyellow;
+  padding: 5px;
+}
+
+.boutonEnvoyer,
+.boutonAnnuler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(139, 25, 101);
+  color: rgb(255, 255, 255);
+  padding: 16px 32px;
+  margin: 16px;
+}
+
+.boutonEnvoyer {
+  background-color: blue;
+}
+
+.boutonAnnuler {
+  background-color: red;
+}
+
+h5 {
+  font-size: 80px;
+  font-family: serif;
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
