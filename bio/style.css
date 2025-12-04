@@ -1,3 +1,56 @@
+
+:root{
+    --couleurPrincipale: #269b33;
+    --couleurSecondaire: #551c0b;
+    --couleurVertLogo: #C0CE3D;
+
+}
+.container{
+    /* longueur maximale du bloc si taille au dessus de 1200px */
+    max-width: 1200px;
+    /* si taille en dessous de 1200px */
+    width: 100%;
+    /* 0 c'est pour haut/bas auto droite/gauche */
+    margin:0 auto;
+}
+
 @media screen and (max-width:600px){
+    #body{
+
+    }
+    #bandeau{
+        width: 430px;
+        background-color: antiquewhite;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
+        border-bottom: #551c0b solid 2px;
+        
+    }
+    #bandeau #logo{
+        height: 102px;
+    }
+    #bandeau img{
+        width: 204px;
+        height: 106px;
+    }
+    #bandeau #burger{
+        font-size: 2.2rem;
+        color: #269b33;
+    }
+
+    /* ============ Main ============ */
+    
+
+    #contenu{
+        background-color: #C0CE3D;
+        display: flex;
+        
+        
+    }
+    #contenu #enAvant .categorie img{
+        width: 86%;
+    }
 
 }
