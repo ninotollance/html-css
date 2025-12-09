@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="fond">
     <header id="bandeau" class="container">
             <div id="logo">
                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
@@ -19,29 +19,115 @@
     <main id="contenu" class="containerInter">
         <section id="enAvant">
             <article class="categorie">
-                <img src="images/photo-acceuille.jpg" alt="découvrir nos rayons">
-                <a href="#" class="bouton">découvrir nos rayons</a>
+                <div class="rayons">
+                    <img src="images/photo-acceuille.jpg" alt="découvrir nos rayons">
+                    <a href="#" class="bouton">découvrir nos rayons</a>
+                </div>
             </article>
             <article class="categorie">
-                <img src="images/vue-de-face-homme-nourrir-les-chevres.jpg" alt="éleveur">
-                <p>Nos producteurs</p>
-                <a href="#" class="bouton">découvrir nos producteurs</a>
+                <div class="producteurs">
+                    <img src="images/vue-de-face-homme-nourrir-les-chevres.jpg" alt="éleveur">
+                    <div class="texteProducteur">
+                        <h2>Nos producteurs</h2>
+                        <a href="#" class="bouton">découvrir nos producteurs</a>
+                    </div>
+                </div>
             </article>
             <article class="categorie">
-                <img src="images/promo1.jpg" alt="promo">
-                <p>Les offres du moments</p>
-                <a href="#" class="bouton">découvrir nos promotions</a>
+                <div class="catalogue">
+                    <img src="images/catalogue.jpg" alt="catalogue">
+                </div>
             </article>
             <article class="categorie">
-                <img src="images/ble.jpg" alt="champ de blé">
-                <p>naturéO s'engage pour la nature</p>
-                <a href="#" class="bouton">découvrir naturéo</a>
+                <div class="promo">
+                    <img src="images/promo1.jpg" alt="promo">
+                    <div class="textePromo">
+                        <h2>Les offres du moments</h2>
+                        <a href="#" class="bouton">découvrir nos promotions</a>
+                    </div>
+                </div>
+            </article>
+            <article class="categorie">
+                <div class="natureo">
+                    <img src="images/ble.jpg" alt="champ de blé">
+                    <div class="texteNatureo">
+                        <h2>naturéo s'engage <br> pour la nature</h2>
+                        <a href="#" class="bouton">découvrir naturéo</a>
+                    </div>
+                </div>
             </article>
         </section> 
-
     </main>
+    <footer id="pied">
+        <h3>restons en contact</h3>
+        <div class="newsletter">
+            <p>suivez nos actualités</p>
+            <form class="email-button">
+                <input type="email" placeholder="Votre address email" required>
+                <button type="submit">Je m'inscris</button>
+            </form>
+        </div>
+        <div class="reseaux">
+            <p>Nos réseaux sociaux</p>
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-square-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a> 
+        </div>
+
+    </footer>
             
 
     
 </body>
 </html>
+
+<!-- <div class="magasin">
+               <i class="fa-solid fa-location-dot"></i>Trouver mon magasin
+            </div>
+            <div class="contact">
+               <i class="fa-solid fa-file"></i>Contact
+            </div>
+            <div class="compte">
+               <i class="fa-solid fa-circle-user"></i>Mon compte
+            </div>
+        </article>
+        
+        <nav id="menuPrincipal">
+            <ul>
+                <li>NOS RAYONS</li>
+                <li>NOS PRODUCTEUR</li>
+                <li>NOS CATALOGUES</li>
+                <li>ACTUALITES</li>
+                <li>QUI SOMME-NOUS ?</li>
+            </ul>
+        </nav>
+    </header>    
+    <main id="contenu">
+        <section class="enAvant">
+            <article class="nosProduits"> 
+                <img src="images/photo-acceuille.jpg" alt="Nos rayons">
+                <a href="#" class="bouton">Découvrir nos rayons</a>
+            </article>
+            <article class="producteurs">
+                
+                <p>Nos producteurs</p>
+                <a href="#" class="boutonBlanc">Le bio près de chez vous</a>
+            </article>
+        </section>
+        <section class="enAvantDeux">
+            <article class="catalogues">
+
+            </article>
+            <article class="promo">
+                <p>Les offres du moments</p>
+                <a href="#" class="bouton">Découvrir les promos</a>
+            </article>
+             <article class="natureo">
+                <p>Naturéo s'engage pour la nature</p>
+                <a href="#" class="bouton">Découvrir naturéo</a>
+            </article>
+
+        </section>
+    </main> --> 

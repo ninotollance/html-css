@@ -1,48 +1,88 @@
-<div class="magasin">
-               <i class="fa-solid fa-location-dot"></i>Trouver mon magasin
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaturéO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="fond">
+    <header id="bandeau" class="container">
+            <div id="logo">
+               <a href="index.html"><img src="images/logo.png" alt="logo"></a>
             </div>
-            <div class="contact">
-               <i class="fa-solid fa-file"></i>Contact
+            <div id="burger">
+            <i class="fa-solid fa-bars"></i>
             </div>
-            <div class="compte">
-               <i class="fa-solid fa-circle-user"></i>Mon compte
-            </div>
+    </header>
+    <main id="contact" class="containerInter">
+        <article class="intro">
+                <!--<img src="images/contacter.jpg" alt="employer">-->
+                <div class="question">
+                    <h2>une question ?</h2>
+                    <p class="ligne"></p>
+                    <p>contactez-nous</p>
+                </div>
         </article>
-        
-        <nav id="menuPrincipal">
-            <ul>
-                <li>NOS RAYONS</li>
-                <li>NOS PRODUCTEUR</li>
-                <li>NOS CATALOGUES</li>
-                <li>ACTUALITES</li>
-                <li>QUI SOMME-NOUS ?</li>
-            </ul>
-        </nav>
-    </header>    
-    <main id="contenu">
-        <section class="enAvant">
-            <article class="nosProduits"> 
-                <img src="images/photo-acceuille.jpg" alt="Nos rayons">
-                <a href="#" class="bouton">Découvrir nos rayons</a>
-            </article>
-            <article class="producteurs">
-                
-                <p>Nos producteurs</p>
-                <a href="#" class="boutonBlanc">Le bio près de chez vous</a>
-            </article>
-        </section>
-        <section class="enAvantDeux">
-            <article class="catalogues">
-
-            </article>
-            <article class="promo">
-                <p>Les offres du moments</p>
-                <a href="#" class="bouton">Découvrir les promos</a>
-            </article>
-             <article class="natureo">
-                <p>Naturéo s'engage pour la nature</p>
-                <a href="#" class="bouton">Découvrir naturéo</a>
-            </article>
-
-        </section>
+        <div id="formulaire">
+            <form action="envoyerMessage.php" method="post">
+                <div class="colonne">
+                    <h2>vos coordonnées</h2>
+                    <p>Civilité* : 
+                        <input type="radio" name="civilite" id="M"> <label for="M">M.</label>
+                        <input type="radio" name="civilite" id="Mme"> <label for="Mme">Mme</label>
+                        <input type="radio" name="civilite" id="Autre"> <label for="Autre">Autre</label>
+                    </p>
+                    <input type="text" id="nom" name="nom" placeholder=" Nom*"><br>
+                    <input type="text" id="prenom" name="prenom" placeholder=" Prénom*"><br>
+                    <input type="email" id="email" name="email" placeholder=" Email*"><br>
+                    <input type="tel" id="telephone" name="telephone" placeholder=" Téléphone*"><br>
+                    <input type="text" id="adresse" name="adresse" placeholder=" Adresse"><br>
+                    <input type="text" id="codepostal" name="codepostal" placeholder=" Code postal*"><br>
+                    <input type="text" id="ville" name="ville" placeholder=" Ville*"><br>
+                    <h2>Le sujet de votre question</h2>
+                    <label for="question"></label>
+                    <select name="question" id="question">
+                        <option value="J'ai une autre question">J'ai une autre question</option>
+                        <option value="rayons">Rayons</option>
+                        <option value="articles">Articles</option>
+                        <option value="actualites">actualités</option>
+                        <option value="magasin">Magasins</option>
+                    </select>
+                    <div class="message">
+                        <h2>Votre message</h2>
+                        <label for="message"></label>
+                        <textarea name="message" id="message" rows="5" cols="33" placeholder=" Votre message"></textarea>
+                        <p>500 caractères maximum</p>
+                        <input type="radio" name="accepter" id="accepter"> <label for="accepter">j'ai lu et accpeter la <span>politique de condidentialité de ce site</span></label>
+                    </div>
+                    <div class="envoie">
+                        <a href="#" class="bouton">j'envoie mon message</a>
+                    </div> 
+                </div>
+            </form>
+        </div>
     </main>
+    <footer id="pied">
+        <h3>restons en contact</h3>
+        <div class="newsletter">
+            <p>suivez nos actualités</p>
+            <form class="email-button">
+                <input type="email" placeholder="Votre address email" required>
+                <button type="submit">Je m'inscris</button>
+            </form>
+        </div>
+        <div class="reseaux">
+            <p>Nos réseaux sociaux</p>
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-square-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+
+        </div>
+
+    </footer>
+
+    

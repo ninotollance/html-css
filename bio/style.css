@@ -1,9 +1,18 @@
 
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Itim';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/itim-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
 :root{
     --couleurPrincipale: #269b33;
     --couleurSecondaire: #551c0b;
     --couleurVertLogo: #C0CE3D;
-
+    --fontTexte: 'Itim';
 }
 .container{
     /* longueur maximale du bloc si taille au dessus de 1200px */
@@ -14,43 +23,427 @@
     margin:0 auto;
 }
 
-@media screen and (max-width:600px){
-    #body{
-
+@media screen and (max-width:700px){
+    body{
+        font-family: var(--fontTexte);
+        background-color:#F0EBE5;
     }
     #bandeau{
-        width: 430px;
-        background-color: antiquewhite;
+        max-width: 700px;
         display: flex;
+        position: fixed;
+        z-index: 100;
         justify-content: space-between;
         align-items: center;
-        padding: 0 50px;
-        border-bottom: #551c0b solid 2px;
-        
+        border-bottom: #551c0b solid 1.5px; 
+        background-color: #F0EBE5;
+        margin-top: -45px;
     }
     #bandeau #logo{
         height: 102px;
+        margin-left: 45px;
     }
     #bandeau img{
         width: 204px;
         height: 106px;
+        
     }
     #bandeau #burger{
         font-size: 2.2rem;
         color: #269b33;
+        margin-right: 53px;
     }
 
     /* ============ Main ============ */
     
 
     #contenu{
-        background-color: #C0CE3D;
+        padding-top: 100px;
         display: flex;
-        
-        
+        margin-top: 40px;
+        margin-bottom: 40px;  
     }
     #contenu #enAvant .categorie img{
         width: 86%;
+        border-radius: 5px;  
+    }
+    #contenu #enAvant .categorie a.bouton{
+        background-color: #269b33;
+        color: white;
+        width: 270px;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    #contenu #enAvant .categorie h2{
+        font-size: 1.8rem;
+        color: var(--couleurSecondaire);
+        font-weight: normal;
+    }
+    #contenu #enAvant .categorie .rayons,
+    #contenu #enAvant .categorie .producteurs,
+    #contenu #enAvant .categorie .catalogue,
+    #contenu #enAvant .categorie .promo,
+    #contenu #enAvant .categorie .natureo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+    }
+    #contenu #enAvant .categorie .rayons{
+        position: relative;
+        margin-bottom: 40px;
+        
+    }
+    #contenu #enAvant .categorie .rayons a{
+        position: absolute;
+        bottom: 20px;
+    }
+    
+    #contenu #enAvant .categorie .producteurs{
+        position: relative;
+        margin-bottom: 40px;
+    }
+    #contenu #enAvant .categorie .producteurs .texteProducteur{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 0px;
+        background-color: white;
+        width: 86%;
+        padding-bottom: 30px;
+        border-radius: 0px 0px 5px 5px;
+    }
+    #contenu #enAvant .categorie .catalogue{
+        margin-bottom: 40px;
+    }
+    #contenu #enAvant .categorie .promo{
+        position: relative;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+    #contenu #enAvant .categorie .promo .textePromo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: -5px;
+        background-color: white;
+        width: 86%;
+        padding-bottom: 30px;
+        border-radius: 0px 0px 5px 5px;
+    }
+    #contenu #enAvant .categorie .natureo{
+        position: relative;   
+    }
+    #contenu #enAvant .categorie .natureo img{
+        height: 600px;
+        position: relative;
+    }
+    #contenu #enAvant .categorie .natureo h2{
+        background-color: #d9d9d9;
+        opacity: 0.7;
+        position: relative;
+        padding-left: 90px;
+        padding-right: 90px;
+        padding-bottom: 80px;
+        padding-top: 10px;
+        bottom: -40px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    #contenu #enAvant .categorie .natureo a{
+        position: absolute;
+        bottom: 25px;
+    }
+    #contenu #enAvant .categorie .natureo .texteNatureo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 20px;
+        width: 86%;
+        padding-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 0px 0px 5px 5px;
+    }
+    #pied{
+        padding-bottom: 30px;
+        padding-left: 45px;
+        padding-right: 45px;
+        border-top: 1px solid var(--couleurPrincipale);
+    }
+    #pied h3{
+        text-transform: uppercase;
+        color: #551c0b;
+        padding-bottom: 20px;
+        font-weight: normal;
+        
+    }
+    #pied .newsletter p{
+        color: #551c0b;
+        margin-bottom: 5px;
+    }
+    #pied .email-button{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        overflow: hidden;
+        color: #551c0b;
+        border: 1.5px solid;
+        border-radius: 5px;
+    }
+    #pied .email-button input{
+        background-color:  rgb(230, 222, 213);
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        
+    }
+    #pied .email-button button{
+        padding: 5px 10px;
+        background-color: #269b33;
+        color: white;
+        border: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+    #pied .reseaux a{
+        text-decoration: none;
+        color: var(--couleurPrincipale);
+        font-size: 1.5rem;
+    }
+    #pied .reseaux p{
+        margin-bottom: 5px;
+        color: var(--couleurSecondaire);  
+    }
+    
+
+/* =========================== page contact ========================== */
+    #contact{
+        margin-top: 40px;
+        padding-top: 100px;
+    }
+    #contact .intro{
+        display: flex;
+        background-image:url("images/contacter.jpg");
+        background-size: cover;
+        height: 224px;  
+    }
+    /*#contact .intro{
+        position: relative;
+        display: flex;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    #contact .intro img{
+        width: 100%;
+        padding-top: 10px;
+        position: absolute;
+    }*/
+    #contact .intro .question{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35%;
+        flex-direction: column;
+        background-color: #551c0b;
+        opacity: 0.8;
+        color: white;
+        margin-left: 45px;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 5px;
+    }
+
+    #contact .intro .question h2{
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+    #contact .intro .question .ligne{ 
+        background-color:var(--couleurVertLogo);
+        color: var(--couleurVertLogo);
+        width: 80px;
+        height: 3px;
+        margin-top: -10px;
+
+    }
+    #contact .intro .question p{
+        font-size: 1.2rem;
+        margin-top: -5px;
+    }
+    #contact #formulaire .colonne{
+        margin-top: 50px;
+        justify-content: left;
+        margin-left: 45px;
+        margin-right: 45px;
+    }
+    #contact #formulaire .colonne h2{
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: normal;
+        color: var(--couleurSecondaire);
+    }
+    #contact #formulaire input[type=text],
+    #contact #formulaire input[type=email],
+    #contact #formulaire input[type=tel],
+    #contact #formulaire select{
+        width: 98.5%;
+        height: 30px;
+        margin-bottom: 20px; 
+    }
+    #contact #formulaire textarea{
+        width: 98.5%;
+        height: 130px;
+    }
+    #contact #formulaire .message p{
+        font-size: 0.7rem;
+        color: #269b33;
+        margin-top: 0px;
+    }
+    #contact #formulaire #accepter{
+        font-size: 5rem;
+    }
+    #contact #formulaire .envoie{
+        display: flex;
+        justify-content: center;
+    }
+    #contact #formulaire a.bouton{
+        background-color: #269b33;
+        color: white;
+        margin-top: 30px;
+        width: 270px;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-bottom: 80px;
+    }
+    /* ==================== Actualité ================ */
+    #actualites{
+        padding-top: 60px;
+        margin-top: 40px;
+    }
+    #actualites .articles{
+        display: flex;
+        background-image:url("images/legumes-actualite.jpg");
+        background-size: cover;
+        height: 224px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        
+    }
+    /*#actualites .articles{
+        position: relative;
+        display: flex;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    #actualites .articles img{
+        position: absolute;
+        width: 100%;
+        padding-top: 10px;
+    }*/
+    #actualites .articles .intro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 55%;
+        opacity: 0.85;
+        background-color: white;
+        margin: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: var(--couleurSecondaire);
+        border-radius: 5px;
+    }
+
+    #actualites .articles .intro h2{
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+    #actualites .articles .intro .ligne{ 
+        background-color:var(--couleurVertLogo);
+        color: var(--couleurVertLogo);
+        width: 80px;
+        height: 3px;
+        margin-top: -10px;
+    }
+    #actualites .articles .intro p{
+        font-size: 1.2rem;
+        margin-top: -5px;
+    }
+    #actualites #articles .actu{
+        display: flex;
+    }
+    #actualites #articles .actu img{
+        width: 86%;
+    }
+}
+
+@media screen and (max-width:550px){
+    #contact .intro .question{
+        display: flex;
+        width: 35%;
+        flex-direction: column;
+        background-color: #551c0b;
+        opacity: 0.8;
+        margin-left: 45px;
+        margin-top: 45px;
+        margin-bottom: 45px;
+        padding-left: 15px;
+        padding-right: 15px;
+        align-items: center;
+        color: white;
+        border-radius: 5px;
+    }
+    #contact .intro .question h2{
+        font-size: 1.4rem;
+    }
+    #contact .intro .question p{
+        font-size: 1rem;
+    }
+    #contact #formulaire .message label{
+        font-size: 0.9rem;
     }
 
 }
+
+/*@media screen and (min-width:600px){
+    #contact #formulaire .colonne{
+        margin-top: 130px;
+        justify-content: left;
+        margin-left: 45px;
+        margin-right: 45px;
+    }
+}*/
+
+/*#pied .newsletter form{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }*
